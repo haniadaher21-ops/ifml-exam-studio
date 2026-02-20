@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IFML Exam Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-orb bg-orb-a"></div>
+    <div class="bg-orb bg-orb-b"></div>
+
+    <main class="app">
+      <header class="hero card">
+        <p class="eyebrow">International Financial and Monetary Law</p>
+        <h1>IFML Exam Studio</h1>
+        <p class="lead">Professional prep with interactive drills, flashcards, and timed checks based on your worksheet.</p>
+        <div class="hero-meta">
+          <div>
+            <p class="meta-label">Exam Date</p>
+            <p class="meta-value">February 23, 2026</p>
+          </div>
+          <div>
+            <p class="meta-label">Countdown</p>
+            <p class="meta-value" id="countdown">Loading...</p>
+          </div>
+          <div>
+            <p class="meta-label">Mastery</p>
+            <p class="meta-value" id="masteryScore">0%</p>
+          </div>
+        </div>
+        <div class="progress-wrap" aria-label="Overall progress">
+          <div class="progress-track">
+            <div class="progress-fill" id="masteryFill"></div>
+          </div>
+        </div>
+      </header>
+
+      <section class="tabs">
+        <button class="tab-btn active" data-tab="learn">Learn</button>
+        <button class="tab-btn" data-tab="flashcards">Flashcards</button>
+        <button class="tab-btn" data-tab="quiz">Quiz Arena</button>
+        <button class="tab-btn" data-tab="prompts">Exam Prompts</button>
+      </section>
+
+      <section id="learn" class="panel active card"></section>
+
+      <section id="flashcards" class="panel card">
+        <div class="flashcard-wrap">
+          <article class="flashcard" id="flashcard" role="button" tabindex="0" aria-label="Flip card">
+            <div class="face front" id="cardFront"></div>
+            <div class="face back" id="cardBack"></div>
+          </article>
+          <div class="flash-controls">
+            <button id="prevCard" class="ghost-btn">Previous</button>
+            <button id="flipCard" class="primary-btn">Flip</button>
+            <button id="nextCard" class="ghost-btn">Next</button>
+          </div>
+          <p class="tiny" id="cardCounter"></p>
+        </div>
+      </section>
+
+      <section id="quiz" class="panel card">
+        <div class="quiz-head">
+          <div>
+            <h2>Quiz Arena</h2>
+            <p class="muted">Answer mixed questions from all modules and build your score.</p>
+          </div>
+          <div class="quiz-actions">
+            <button id="startQuiz" class="primary-btn">Start 10Q Challenge</button>
+            <button id="startSprint" class="ghost-btn">Start 7-Min Sprint</button>
+          </div>
+        </div>
+        <div id="quizArea" class="quiz-area"></div>
+      </section>
+
+      <section id="prompts" class="panel card">
+        <div class="prompt-head">
+          <h2>Short-Form Exam Prompts</h2>
+          <button id="newPrompt" class="primary-btn">Random Prompt</button>
+        </div>
+        <p id="activePrompt" class="prompt-box"></p>
+        <div class="rubric">
+          <p class="rubric-title">Self-check rubric (quick):</p>
+          <ul>
+            <li>Define legal terms precisely and early.</li>
+            <li>Connect doctrine to institutional practice.</li>
+            <li>Use treaty/article anchors where relevant.</li>
+            <li>State limits, tradeoffs, and practical implications.</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
