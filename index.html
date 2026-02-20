@@ -17,7 +17,7 @@
       <header class="hero card">
         <p class="eyebrow">International Financial and Monetary Law</p>
         <h1>IFML Exam Studio</h1>
-        <p class="lead">Professional prep with interactive drills, flashcards, and timed checks based on your worksheet.</p>
+        <p class="lead">Deep exam prep with adaptive drilling, case labs, and timed simulations.</p>
         <div class="hero-meta">
           <div>
             <p class="meta-label">Exam Date</p>
@@ -31,6 +31,14 @@
             <p class="meta-label">Mastery</p>
             <p class="meta-value" id="masteryScore">0%</p>
           </div>
+          <div>
+            <p class="meta-label">Streak</p>
+            <p class="meta-value" id="streakScore">0</p>
+          </div>
+          <div>
+            <p class="meta-label">Question Bank</p>
+            <p class="meta-value" id="bankSize">0</p>
+          </div>
         </div>
         <div class="progress-wrap" aria-label="Overall progress">
           <div class="progress-track">
@@ -41,12 +49,15 @@
 
       <section class="tabs">
         <button class="tab-btn active" data-tab="learn">Learn</button>
+        <button class="tab-btn" data-tab="deepdive">Deep Dive</button>
         <button class="tab-btn" data-tab="flashcards">Flashcards</button>
         <button class="tab-btn" data-tab="quiz">Quiz Arena</button>
+        <button class="tab-btn" data-tab="caselab">Case Lab</button>
         <button class="tab-btn" data-tab="prompts">Exam Prompts</button>
       </section>
 
       <section id="learn" class="panel active card"></section>
+      <section id="deepdive" class="panel card"></section>
 
       <section id="flashcards" class="panel card">
         <div class="flashcard-wrap">
@@ -67,29 +78,45 @@
         <div class="quiz-head">
           <div>
             <h2>Quiz Arena</h2>
-            <p class="muted">Answer mixed questions from all modules and build your score.</p>
+            <p class="muted">Adaptive drills by weak topic plus timed performance modes.</p>
           </div>
           <div class="quiz-actions">
-            <button id="startQuiz" class="primary-btn">Start 10Q Challenge</button>
-            <button id="startSprint" class="ghost-btn">Start 7-Min Sprint</button>
+            <button id="startChallenge" class="primary-btn">15Q Challenge</button>
+            <button id="startAdaptive" class="ghost-btn">Adaptive 20Q</button>
+            <button id="startSprint" class="ghost-btn">7-Min Sprint</button>
+            <button id="startRapid" class="ghost-btn">Rapid Fire (60s)</button>
+            <button id="startExamSim" class="ghost-btn">Exam Sim (30m)</button>
           </div>
         </div>
         <div id="quizArea" class="quiz-area"></div>
       </section>
 
+      <section id="caselab" class="panel card">
+        <div class="prompt-head">
+          <h2>Case Lab</h2>
+          <button id="newCase" class="primary-btn">New Case</button>
+        </div>
+        <div id="caseArea"></div>
+      </section>
+
       <section id="prompts" class="panel card">
         <div class="prompt-head">
-          <h2>Short-Form Exam Prompts</h2>
-          <button id="newPrompt" class="primary-btn">Random Prompt</button>
+          <h2>Exam Prompts</h2>
+          <div class="quiz-actions">
+            <button id="newShortPrompt" class="primary-btn">Short Prompt</button>
+            <button id="newLongPrompt" class="ghost-btn">Long Essay Prompt</button>
+            <button id="newDebatePrompt" class="ghost-btn">Argue Both Sides</button>
+          </div>
         </div>
         <p id="activePrompt" class="prompt-box"></p>
         <div class="rubric">
-          <p class="rubric-title">Self-check rubric (quick):</p>
+          <p class="rubric-title">Scoring rubric (100 points)</p>
           <ul>
-            <li>Define legal terms precisely and early.</li>
-            <li>Connect doctrine to institutional practice.</li>
-            <li>Use treaty/article anchors where relevant.</li>
-            <li>State limits, tradeoffs, and practical implications.</li>
+            <li>25: Accuracy of legal definitions and doctrinal structure.</li>
+            <li>20: Article/treaty anchors and institutional references.</li>
+            <li>20: Application to facts and cross-border implications.</li>
+            <li>20: Counterarguments and limits/tradeoffs.</li>
+            <li>15: Clarity, organization, and conclusion quality.</li>
           </ul>
         </div>
       </section>
